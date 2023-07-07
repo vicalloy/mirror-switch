@@ -1,14 +1,23 @@
 import sys
+from collections.abc import Iterable
 
-from mirror_switch.utils import list_question
+from mirror_switch.utils import get_command_name, list_question
 
 from .mirrors import mirrors
 
 
 class BaseMirror:
-    @property
-    def description(self) -> str:
+    commands: Iterable[str] = []
+
+    @classmethod
+    def get_description(cls) -> str:
         raise NotImplementedError
+
+    @classmethod
+    def get_cmd_name(cls) -> str:
+        cmd = get_command_name(cls.commands)
+        assert cmd is not None
+        return cmd
 
     @classmethod
     def get_mirror_list(cls) -> list[str | tuple[str, str]]:
@@ -32,4 +41,5 @@ class BaseMirror:
         if mirror == "show":
             self.show_config()
             self.set_mirror()
+            return
         self.do_set_mirror(mirror)
