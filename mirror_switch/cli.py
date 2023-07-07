@@ -18,12 +18,16 @@ def get_mirror_type() -> BaseMirror:
     cls_name = list_question(message, choices)
     if cls_name == "exit":
         sys.exit(0)
-    return globals()[cls_name]()
+    return globals()[cls_name](entrypoint)
+
+
+def entrypoint():
+    mirror_type_module = get_mirror_type()
+    mirror_type_module.set_mirror()
 
 
 def main():
-    mirror_type_module = get_mirror_type()
-    mirror_type_module.set_mirror()
+    entrypoint()
 
 
 if __name__ == "__main__":
