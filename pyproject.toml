@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "mirror-switch"
+version = "0.1.0"
+description = ""
+authors = ["HuXiaomao <huxm@shifei.tech>"]
+readme = "README.md"
+packages = [{include = "mirror_switch"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
