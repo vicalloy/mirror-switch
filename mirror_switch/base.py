@@ -34,8 +34,8 @@ class BaseMirror:
         pass
 
     def set_mirror(self) -> None:
-        mirrors = self.get_mirror_list()
-        mirror = list_question("Choose a mirror", mirrors)
+        mirror_list = self.get_mirror_list()
+        mirror = list_question("Choose a mirror", mirror_list)
         if mirror == "exit":
             sys.exit(0)
         if mirror == "show":
