@@ -11,4 +11,10 @@ mirrors = {
         "https://registry.npmjs.org/",
         "https://registry.npm.taobao.org",
     ],
+    "Docker": [
+        "https://registry.docker-cn.com",
+        "https://registry.hub.docker.com",
+        "http://hub-mirror.c.163.com",
+        "https://docker.mirrors.ustc.edu.cn",
+    ],
 }

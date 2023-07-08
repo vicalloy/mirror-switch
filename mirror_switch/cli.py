@@ -1,6 +1,7 @@
 import sys
 
 from mirror_switch.base import BaseMirror
+from mirror_switch.docker import DockerMirror
 from mirror_switch.npm import NpmMirror
 from mirror_switch.yarn import YarnMirror
 
@@ -12,7 +13,7 @@ def get_mirror_type() -> BaseMirror:
     message = "What type of mirror do you need?"
     choices = [
         (cls.get_description(), cls.__name__)
-        for cls in [PypiMirror, YarnMirror, NpmMirror]
+        for cls in [PypiMirror, YarnMirror, NpmMirror, DockerMirror]
     ]
     choices.append(("Exit", "exit"))
     cls_name = list_question(message, choices)

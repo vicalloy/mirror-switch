@@ -80,6 +80,7 @@ ignore = [
     "PLW0603",
     "PLR2004",
     "S603",
+    "S607",
 ]
 
 [tool.ruff.isort]
